@@ -1,9 +1,9 @@
 
-// library imports
+// Library imports
+import System.Collections.Vector;
 import System.String;
 
-// project imports
-import libs.Strings;
+// Project imports
 
 
 public object ShellResult const implements ICollection, IIterable
@@ -88,5 +88,27 @@ public object ShellResult const implements ICollection, IIterable
     private int          ExitCode const;
     private string       ShellOutput const;
     private Vector<Line> TableResult const;
+}
+
+
+public object Line extends Vector<string> implements IIterable
+{
+    public void Constructor() {
+        base.Constructor();
+    }
+
+    public string =operator( string ) const {
+        string result;
+
+        foreach ( string entry : getIterator() ) {
+            if ( result ) {
+                result += " | ";
+            }
+
+            result += entry;
+        }
+
+        return result;
+    }
 }
 

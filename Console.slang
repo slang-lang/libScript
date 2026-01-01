@@ -1,7 +1,7 @@
 
-// library imports
+// Library imports
 
-// project imports
+// Project imports
 
 
 public namespace Console

@@ -1,28 +1,13 @@
 
-// library imports
-import System.Collections.Vector;
+// Library imports
 
-// project imports
+// Project imports
 
 
-public object Line extends Vector<string> implements IIterable
+public namespace Strings
 {
-    public void Constructor() {
-        base.Constructor();
-    }
 
-    public string =operator( string ) const {
-        string result;
 
-        foreach ( string entry : getIterator() ) {
-            if ( result ) {
-                result += " | ";
-            }
 
-            result += entry;
-        }
-
-        return result;
-    }
 }
 
