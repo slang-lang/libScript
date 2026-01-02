@@ -1,7 +1,7 @@
 {
   "name": "libScript - Shell scripting in Slang",
   "name_short": "libScript",
-  "version": "0.2.0",
+  "version": "0.2.0a",
   "description": "libScript is a library that allows easy creation of shell scripts in Slang.",
   "dependencies": [{ "module": "Slang", "version_min": "0.9.4" }],
   "target": {

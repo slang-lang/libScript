@@ -1,12 +1,16 @@
 #!/usr/bin/env slang
 
-import libs.CoreUtils.ShellCommand;
+import libs.Utils;
 
 
 public void Main( int argc, string args )
 {
-	var cmd = new ShellCommand( "uname" );
+	var result = Utils.uname( "-a" );
 
-	write( cmd.Run( "-a" ) );
+	print( cast<string>( result ) );
+
+	// foreach ( Line line : Utils.uname( "-a" ) ) {
+	// 	print( cast<string>( line ) );
+	// }
 }
 

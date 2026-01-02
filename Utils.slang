@@ -1,6 +1,5 @@
 
 // Library imports
-import System.IO.File;
 
 // Project imports
 import CoreUtils.ShellResult;
@@ -29,6 +28,15 @@ public namespace Utils
     {
         return new ShellResult(
             system( streval( "pwd {{{params}}} 2>&1" ) ),
+            EXIT_CODE,
+            false
+        );
+    }
+
+    public ShellResult uname( string params = "" )
+    {
+        return new ShellResult(
+            system( streval( "uname {{{params}}} 2>&1" ) ),
             EXIT_CODE,
             false
         );
