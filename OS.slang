@@ -5,8 +5,13 @@
 import CoreUtils.ShellResult;
 
 
-public namespace Utils
+public namespace OS
 {
+
+    public string arch()
+    {
+        return system( "uname -m" );
+    }
 
     public ShellResult free( string params = "" )
     {
@@ -16,21 +21,14 @@ public namespace Utils
         );
     }
 
-    public ShellResult ps( string params = "" )
+    public string hostname()
     {
-        return new ShellResult(
-            system( streval( "ps {{{params}}} 2>&1" ) ),
-            EXIT_CODE
-        );
+        return system( "uname -n" );
     }
 
-    public ShellResult pwd( string params = "" )
+    public string platform()
     {
-        return new ShellResult(
-            system( streval( "pwd {{{params}}} 2>&1" ) ),
-            EXIT_CODE,
-            false
-        );
+        return system( "uname -s" );
     }
 
     public ShellResult uname( string params = "" )

@@ -1,13 +1,13 @@
 #!/usr/bin/env slang
 
-import libs.Utils;
+import libs.OS;
 
 
 public void Main( int argc, string args )
 {
-	// var result = Utils.uptime();
+	// var result = OS.uptime();
 
-	foreach ( Line line : Utils.uptime() ) {
+	foreach ( Line line : OS.uptime() ) {
 		print( cast<string>( line ) );
 	}
 }

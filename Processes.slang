@@ -5,13 +5,13 @@
 import CoreUtils.ShellResult;
 
 
-public namespace Strings
+public namespace Processes
 {
 
-    public ShellResult read( string params = "" )
+    public ShellResult ps( string params = "" )
     {
         return new ShellResult(
-            system( streval( "read {{{params}}} 2>&1" ) ),
+            system( streval( "ps {{{params}}} 2>&1" ) ),
             EXIT_CODE
         );
     }

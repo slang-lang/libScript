@@ -1,15 +1,15 @@
 #!/usr/bin/env slang
 
-import libs.Utils;
+import libs.OS;
 
 
 public void Main( int argc, string args )
 {
-	var result = Utils.uname( "-a" );
+	var result = OS.uname( "-a" );
 
 	print( cast<string>( result ) );
 
-	// foreach ( Line line : Utils.uname( "-a" ) ) {
+	// foreach ( Line line : OS.uname( "-a" ) ) {
 	// 	print( cast<string>( line ) );
 	// }
 }

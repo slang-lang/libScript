@@ -57,6 +57,13 @@ public object ShellResult const implements ICollection, IIterable
     {
         return ShellOutput;
     }
+
+    public ShellResult operator|( ShellResult other ) const
+    {
+        print( "operator|" );
+
+        return this;
+    }
     // }
 
     // ICollection interface implementation

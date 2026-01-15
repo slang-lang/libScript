@@ -5,12 +5,8 @@ import libs.Files;
 
 public void Main( int argc, string args )
 {
-	var result = Files.pwd();
+	var result = Files.grep( Files.ls( "-la" ), "madelmann" );
 
 	print( cast<string>( result ) );
-
-// 	foreach ( Line line : Files.pwd() ) {
-// 		print( cast<string>( line ) );
-// 	}
 }
 

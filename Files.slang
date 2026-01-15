@@ -9,11 +9,6 @@ import CoreUtils.ShellResult;
 public namespace Files
 {
 
-    public bool fileExists( string filename ) const
-    {
-        return System.IO.File.Exists( filename );
-    }
-
     public ShellResult cat( string file, string params = "" )
     {
         return new ShellResult(
@@ -50,6 +45,15 @@ public namespace Files
         );
     }
 
+    public ShellResult cp( string source, string destination, string params = "" )
+    {
+        return new ShellResult(
+            system( streval( "cp {{{source}}} {{{destination}}} {{{params}}} 2>&1" ) ),
+            EXIT_CODE,
+            false
+        );
+    }
+
     public ShellResult df( string params = "" )
     {
         return new ShellResult(
@@ -66,6 +70,11 @@ public namespace Files
         );
     }
 
+    public bool exists( string filename ) const
+    {
+        return System.IO.File.Exists( filename );
+    }
+
     public ShellResult file( string file, string params = "" )
     {
         return new ShellResult(
@@ -79,6 +88,16 @@ public namespace Files
     {
         return new ShellResult(
             system( streval( "find {{{params}}} 2>&1" ) ),
+            EXIT_CODE
+        );
+    }
+
+    public notimplemented ShellResult grep( ShellResult output, string params = "" )
+    {
+        var input = output.getOutput();
+
+        return new ShellResult(
+            system( streval( "echo {{{input}}} | grep {{{params}}} 2>&1" ) ),
             EXIT_CODE
         );
     }
@@ -114,6 +133,23 @@ public namespace Files
             system( streval( "mv {{{source}}} {{{destination}}} {{{params}}} 2>&1" ) ),
             EXIT_CODE,
             false
+        );
+    }
+
+    public ShellResult pwd( string params = "" )
+    {
+        return new ShellResult(
+            system( streval( "pwd {{{params}}} 2>&1" ) ),
+            EXIT_CODE,
+            false
+        );
+    }
+
+    public ShellResult stat( string file, string params = "" )
+    {
+        return new ShellResult(
+            system( streval( "stat {{{params}}} {{{file}}} 2>&1" ) ),
+            EXIT_CODE
         );
     }
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env slang
 
-import libs.Utils;
+import libs.OS;
 
 
 public void Main( int argc, string args )
 {
-	// var result = Utils.free();
+	// var result = OS.free();
 
-	foreach ( Line line : Utils.free() ) {
+	foreach ( Line line : OS.free() ) {
 		print( cast<string>( line ) );
 	}
 }
