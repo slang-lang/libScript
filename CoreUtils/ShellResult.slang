@@ -68,7 +68,7 @@ public object ShellResult const implements ICollection, IIterable
 
     // ICollection interface implementation
     // {
-    public Line at( int index ) const
+    public Line const at( int index ) const
     {
         return TableResult.at( index );
     }
@@ -78,7 +78,7 @@ public object ShellResult const implements ICollection, IIterable
         return TableResult.size();
     }
 
-    public Line operator[]( int index ) const
+    public Line const operator[]( int index ) const
     {
         return TableResult.at( index );
     }
