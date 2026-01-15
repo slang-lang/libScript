@@ -92,12 +92,12 @@ public namespace Files
         );
     }
 
-    public notimplemented ShellResult grep( ShellResult output, string params = "" )
+    public ShellResult grep( ShellResult output, string params = "" )
     {
-        var input = output.getOutput();
+        var input = cast<string>( output );
 
         return new ShellResult(
-            system( streval( "echo {{{input}}} | grep {{{params}}} 2>&1" ) ),
+            system( streval( "echo \"{{{input}}}\" | grep {{{params}}} 2>&1" ) ),
             EXIT_CODE
         );
     }
@@ -140,6 +140,15 @@ public namespace Files
     {
         return new ShellResult(
             system( streval( "pwd {{{params}}} 2>&1" ) ),
+            EXIT_CODE,
+            false
+        );
+    }
+
+    public ShellResult rm( string file, string params = "" )
+    {
+        return new ShellResult(
+            system( streval( "rm {{{file}}} {{{params}}} 2>&1" ) ),
             EXIT_CODE,
             false
         );
