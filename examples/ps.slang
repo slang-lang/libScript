@@ -1,11 +1,11 @@
 #!/usr/bin/env slang
 
-import libs.Utils;
+import libs.Processes;
 
 
 public void Main( int argc, string args )
 {
-	var result = Utils.ps( "aux | grep $(whoami)" );
+	var result = Processes.ps( "aux | grep $(whoami)" );
 
 	foreach ( Line line : result ) {
 		print( cast<string>( line ) );

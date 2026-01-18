@@ -24,7 +24,7 @@ public namespace Processes
         );
     }
 
-    public ShellResult pkill,( string params )
+    public ShellResult pkill( string params )
     {
         return new ShellResult(
             system( streval( "pkill, {{{params}}} 2>&1" ) ),
