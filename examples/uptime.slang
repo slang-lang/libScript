@@ -14,7 +14,7 @@ public void Main( int argc, string args )
 		print( "up since " + line[ 2 ] + " day(s)" );
 	}
 	else {
-		print( "up since " + line[ 2 ] + " hour(s)" );
+		print( "up since ~" + cast<int>( line[ 2 ] ) + " hour(s)" );
 	}
 }
 
