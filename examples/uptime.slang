@@ -5,10 +5,16 @@ import libs.OS;
 
 public void Main( int argc, string args )
 {
-	// var result = OS.uptime();
+	var result = OS.uptime();
 
-	foreach ( Line line : OS.uptime() ) {
-		print( cast<string>( line ) );
+	var line const = result[ 0 ];
+	print( cast<string>( line ) );
+
+	if ( line[ 3 ] == "day" || line[ 3 ] == "days" ) {
+		print( "up since " + line[ 3 ] + " day(s)" );
+	}
+	else {
+		print( "up since " + line[ 2 ] + " hour(s)" );
 	}
 }
 

@@ -18,20 +18,18 @@ public object ShellResult const implements ICollection, IIterable
             var str = new String( ShellOutput );
 
             foreach ( string line : str.SplitBy( LINEBREAK ) ) {
-                if ( !line ) {
-                    continue;
-                }
+                if ( line ) {
+                    var tok = new String( line );
 
-                var tok = new String( line );
-
-                var row = new Line();
-                foreach ( string token : tok.SplitBy( " " ) ) {
-                    if ( token ) {
-                        row.push_back( token );
+                    var row = new Line();
+                    foreach ( string token : tok.SplitBy( " " ) ) {
+                        if ( token ) {
+                            row.push_back( token );
+                        }
                     }
-                }
 
-                TableResult.push_back( row );
+                    TableResult.push_back( row );
+                }
             }
         }
     }
